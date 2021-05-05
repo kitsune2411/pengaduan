@@ -1,0 +1,20 @@
+.pekok{
+    color: #F7882F;
+}
+
+.warna-footer {
+
+    background-color: #6A798C;
+}
+
+/* body */
+
+.jumbotron {
+    padding-top: 200px;
+    background-color: rgba(230, 230, 230, 0.70);
+}
+
+/* list */
+.link{
+    margin-bottom: 40px;
+}

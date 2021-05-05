@@ -1,0 +1,48 @@
+.pekok{
+    color: #F7882F;
+}
+
+.warna-footer {
+
+    background-color: #6A798C;
+}
+
+/* JUMBOTRON */
+.jumbotron {
+    padding-top: 6rem;
+    background-image: url(oranghome.png);
+    background-size: cover;
+    height: 670px;
+}
+
+.jumbotron .display-5{
+    color: white;
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+.jumbotron .display-5 span{
+    color: #F7882F;
+}
+
+.lead{
+    color: white;
+    
+}
+
+/* KOTAK */
+
+.btn{
+    color: white !important;
+    background-color: #F7882F !important;
+}
+
+.kotak{
+    margin-top: 100px;
+}
+
+.kotak2{
+
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
