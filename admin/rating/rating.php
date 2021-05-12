@@ -1,71 +1,38 @@
-<?php include "../templates/header.php"; ?>
+<?php $judul="Rating"; include "../core.php"; include "../templates/header.php"; 
 
-<link rel="stylesheet" href="../../rateyo/jquery.rateyo.css"/>
-    <div class="container mt-5">
-        <div class="row">
+?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
-            <form action="" method="post">
-
-                <div>
-                    <h3>
-                        Rating System</h3>
-
-                </div>
-                <hr style="color: #F7882F; height: 3px;">
-                <h5>Pesan</h5>
-
-                <div class="rateYo" id="rating" data-rateyo-rating="4" data-rateyo-num-stars="5" data-rateyo-score="3">
-                </div>
-                <div>  
-                    <textarea name="text" id="text" placeholder="pesan"> </textarea>
-                </div>
-
-                <span class='result'>0</span>
-                <input type="hidden" name="rating">
-
-        </div>
-
-        <div><input type="submit" name="add"> </div>
-
-        </form>
-    </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <div class="container mt-5">
+   <h3><span style="font-size:45px;color:orange;">Rating</span></h3>
+<hr style="height:3px;color: #FFA900 ;">
+  <?php
+  $no = 1;
+  $stmt = $pdo->prepare("SELECT * FROM `rating` "); 
+  $stmt->execute();
   
+  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  
+    ?>
+    <div class="container">
+    <div class="list-group mt-5">
+      <div href="#" class="list-group-item list-group-item-action " aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><?=$row['username'];?></h5>
+        </div>
+        <p>Id pengaduan : <a href="../pengaduan/detail-pengaduan.php?id=<?=$row['id_pengaduan'];?>"><?=$row['id_pengaduan'];?></a></p>
+        <p>Rating : <?=$row['rate'];?></p>
+        <p class="mb-1"><?=$row['pesan'];?></p>
+      </div>
+    </div>
+    </div>
+    <?php } ?>
+ 
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    
 
-    <script>
-        $(function() {
-            $(".rateyo").rateYo().on("rateyo.change", function(e, data) {
-                var rating = data.rating;
-                $(this).parent().find('.score').text('score :' + $(this).attr('data-rateyo-score'));
-                $(this).parent().find('.result').text('rating :' + rating);
-                $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
-            });
-        });
-    </script>
-  <script src="../../rateyo/jquery.js"></script>
-  <script src="../../rateyo/jquery.rateyo.js"></script>
-<?php
-require 'db_connection.php';
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $text = $_POST["text"];
-    $rating = $_POST["rating"];
-
-    $sql = "INSERT INTO ratee  VALUES ('','$text','$rating')";
-    if (mysqli_query($conn, $sql)) {
-        echo "
-        <script>
-        alert('Berhasil');
-    </script>
-        
-        ";
-        return header('location:dashboard.php');
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-    mysqli_close($conn);
-}
-
+<?php 
 include "../templates/footer.php";
 ?>
 

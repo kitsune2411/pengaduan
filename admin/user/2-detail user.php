@@ -1,8 +1,8 @@
 <?php 
 
 $judul = "detail user";
-include "../templates/header.php"; 
 require "../core.php"; 
+include "../templates/header.php"; 
 
 $nik    = $_GET['nik'];
 ?>

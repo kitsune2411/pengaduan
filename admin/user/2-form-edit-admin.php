@@ -1,6 +1,6 @@
 <?php 
-include "../templates/header.php"; 
 require "../core.php";
+include "../templates/header.php"; 
 
 $id = $_GET["id"];
 
@@ -16,7 +16,14 @@ $stmt = $pdo->prepare("SELECT * FROM `petugas` WHERE id_petugas=$id ");
 
 <div class="container mt-5">
 <h2>Edit Petugas</h2>
-  <hr>
+<hr style="height:3px;color:orange;">
+  <?php 
+				if(isset($_GET['pesan'])){
+					if($_GET['pesan']=="gagal"){
+						echo "<div class='alert alert-danger' role='alert'>ERORR !<span onclick=\"this.parentElement.style.display='none'\" style='float:right; cursor:pointer;'>X</span></div>";
+					}
+				}
+				?>
   <form action="2-edit admin.php?id=<?=$id?>" method="post" class="mt-5">
     <div class="form-outline mb-4">
       <input type="text" id="form1Example1" class="form-control" name="nama" value="<?= $row['nama_petugas']; ?>"/>

@@ -2,7 +2,7 @@
 require "../core.php";
 $judul = "Detail pengaduan";
 include "../templates/header.php";
-include "../status.php"; 
+
 
   $id = $_GET['id'];
 ?>
@@ -118,12 +118,20 @@ include "../status.php";
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
       $nik = $row['nik'];
+      $status = $row['status'];
       $i = $pdo->prepare("SELECT * FROM `masyarakat` WHERE nik= $nik");
       $i->execute();
       while ($r = $i->fetch(PDO::FETCH_ASSOC)) {
-        echo "pengirim : ". $r['nama'] . " (" . $r['nik'] . ")";
+        echo "Pengirim : ". $r['nama'] . " (" . $r['nik'] . ")";
       }
-      echo "<div class='container'>";
+      echo "<br>";
+      if($row['status'] == '0'){echo "Status : terkirim";} 
+          elseif($row['status'] == 'proses'){echo "Status : diproses";}
+          elseif($row['status'] == 'selesai'){echo "Status : selesai";} 
+          else echo "erorr";
+      echo "<br>";
+      echo "Pesan :";
+      echo "<div class='container ps-5' style='padding-right:5%;text-align: justify;text-justify: inter-word;'>";
       echo $row['isi_laporan']; 
       echo "</div>";
   ?> 
@@ -132,7 +140,7 @@ include "../status.php";
 
   <h3>Attachment<h3>
 
-  <img id="myImg" src="../img/<?= $row['foto'];?>" alt="" style="width:100%;max-width:300px"> 
+  <img id="myImg" src="../../img/<?= $row['foto'];?>" alt="" style="width:100%;max-width:300px"> 
 
   <div id="myModal" class="modal">
     <span class="close">&times;</span>
@@ -143,7 +151,7 @@ include "../status.php";
   <?php } ?>
   <hr style="color: #F7882F; height: 3px;">
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-warning me-md-2" type="button">Tanggapi</button>
+    <button id="btnn-tanggapi" class="btn btn-warning me-md-2" type="button"  onclick="location.href='form-tanggapan.php?id=<?=$id?>'">Tanggapi</button>
   </div>
   <h3 class="mt-n5">Tanggapan</h3>
   <p class="text-justify mt-4">
@@ -152,18 +160,24 @@ include "../status.php";
     $s->execute();
     while ($row = $s->fetch(PDO::FETCH_ASSOC)) {
       $id_petugas = $row['id_petugas'];
+      $id_tanggapan = $row['id_tanggapan'];
       $i = $pdo->prepare("SELECT * FROM `petugas` WHERE id_petugas= $id_petugas");
       $i->execute();
       while ($r = $i->fetch(PDO::FETCH_ASSOC)) {
-        echo "pengirim : ". $r['nama_petugas'];
+        echo '<div class="list-group mt-3" style="width:40%">';
+        echo '<div class="list-group-item list-group-item-action " aria-current="true">';
+        echo '<div class="d-flex w-100 justify-content-between">';
+        echo '<h5 class="mb-1">Pengirim : ' . $r["nama_petugas"] . '</h5>';
       }
-      echo "<div class='container'>";
-      echo $row['tanggapan']; 
-      echo "</div>";
+      echo '<small>'. $row['tgl_tanggapan'] . '</small>';
+      echo '</div>';
+      echo '<p class="mb-1 ms-2">'. $row['tanggapan'] .'</p>';
+      echo '<a href="hapus-tanggapan.php?id='. $id_tanggapan .'&id_aduan='. $id .'"class="float-end"><i class="fas fa-trash" style="color:red"></i></a>';
+      echo '</div>';
+      echo '</div>';
     } 
   ?> 
   </p>
-</div>
 <script>
   // Get the modal
 var modal = document.getElementById("myModal");
@@ -171,11 +185,9 @@ var modal = document.getElementById("myModal");
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 var img = document.getElementById("myImg");
 var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
 img.onclick = function(){
   modal.style.display = "block";
   modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
 }
 
 // Get the <span> element that closes the modal
@@ -185,6 +197,7 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 } 
+
 </script>
 <?php
 include "../templates/footer.php";

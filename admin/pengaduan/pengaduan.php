@@ -2,8 +2,14 @@
 require "../core.php";
 $judul = "Pengaduan";
 include "../templates/header.php";
-include "../status.php"; 
+
 ?>
+<style>
+.badge.rounded-pill{
+  font-size:14.4px;
+  width: 81px;
+}
+</style>
 
 <div class="container mt-5">
 <h3><span style="font-size:45px;color:orange;">Pengaduan</span> List aduan</h3>
@@ -32,9 +38,9 @@ include "../status.php";
       <td><?= $row['nik']; ?></td>
       <td>
         <?php 
-          if($row['status'] == '0'){echo "terkirim";} 
-          elseif($row['status'] == 'proses'){echo "diproses";}
-          elseif($row['status'] == 'selesai'){echo "selesai";} 
+          if($row['status'] == '0'){echo '<span class="badge rounded-pill bg-primary">Terkirim</span>';} 
+          elseif($row['status'] == 'proses'){echo '<span class="badge rounded-pill bg-warning">Diproses</span>';}
+          elseif($row['status'] == 'selesai'){echo '<span class="badge rounded-pill bg-success">Selesai</span>';} 
           else echo "erorr"
         ?>
       </td>

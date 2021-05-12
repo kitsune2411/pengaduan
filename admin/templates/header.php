@@ -28,17 +28,7 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
   rel="stylesheet"
 />
-
-
       
-      
-      <script type="text/javascript">
-        $(document).ready( function () {
-          $('#example').DataTable();
-          $('select').formSelect();
-        } );
-      
-      </script>
 <style>
 html {
   height: 100%;
@@ -48,6 +38,7 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: "Lato", sans-serif;
+  padding-bottom: 20px;
 }
 
 .sidebar {
@@ -127,7 +118,7 @@ div.content {
   <body>
 
 <div class="sidebar">
-  <a href="#profile"><img src="../img/bulet.png" width="40" style="margin-right: 10px;"> User</a>
+  <a href="../Profile/profile.php"><img src="../img/bulet.png" width="40" style="margin-right: 10px;"> User</a>
   <hr style="color: white; height: 3px;">
 
   <a class="" href="../dashboard/dashboard.php"><img src="../img/category.png" width="30" style="margin-right: 10px;"> Dashboard</a>
@@ -156,8 +147,8 @@ div.content {
               <img src="../img/user bulet.png" width="40">
               </a> 
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="../Profile/profile.php">Profil</a></li>
+                <li><a class="dropdown-item" href="../Profile/form-edit-profile.php">Setting</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="../../logout.php">Log out</a></li>
               </ul>
@@ -166,11 +157,6 @@ div.content {
       </nav>
       
         
-          
-        
-       
-      
-
   
     <script>
 // Add active class to the current button (highlight it)

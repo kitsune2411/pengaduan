@@ -29,30 +29,34 @@
     $pengaduan = $pdo->prepare("SELECT * FROM pengaduan");
     $pengaduan->execute();
     $aduan = $pengaduan->rowCount();
-    #$rating    = 
-    #$average   = array_sum($rating) / rowCount($pengaduan);
-    #$avg       = ceil($average);
 
-    
+    $rating = $pdo->prepare("SELECT AVG(rate) AS avg FROM rating");
+    $rating->execute();
+    while ($avg = $rating->fetch(PDO::FETCH_ASSOC)) :
+      $average = $avg['avg'];
+      $rate = round($average);
+    endwhile;
   ?>
 
 <div class="container overflow-hidden">
   <div class="row gy-3">
     <div class="col-6">
-      <div class="p-3 border border-warning border-3 rounded-3" style="height:250px;"><a href=""><img class="rounded float-start" src="../img/oren1.png" alt="..." height="200"></a>
-      <span class=""><p class="h2">Masyarakat</p><p class=""><?= $user ?></p></span></div>
+      <div class="p-3 border border-warning border-3 rounded-3" style="height:250px;"><a href="../user/2-user.php"><img class="rounded float-start" src="../img/oren1.png" alt="..." height="200"></a>
+      <span class=""><p class="h1">Masyarakat</p><p class="h3"><?= $user ?></p></span></div>
     </div>
     
     <div class="col-6">
-      <div class="p-3 border border-warning border-3 rounded-3" style="height:250px;"><img class="rounded float-start" src="../img/oren3.png" alt="..." height="200">
-      <span class=""><p class="h2">Pengaduan</p><p class=""><?= $aduan ?></p></span></div>
+      <div class="p-3 border border-warning border-3 rounded-3" style="height:250px;"><a href="../pengaduan/pengaduan.php"><img class="rounded float-start" src="../img/oren3.png" alt="..." height="200"></a>
+      <span class=""><p class="h1">Pengaduan</p><p class="h3"><?= $aduan ?></p></span></div>
     </div>
     <div class="col-6">
-      <div class="p-3 border border-warning border-3 rounded-3" style="height:250px;"><img class="rounded float-start" src="../img/oren4.png" alt="..." height="200">
-      <span class=""><p class="h2">Avg Rating</p><p class=""></p></span></div>
+      <div class="p-3 border border-warning border-3 rounded-3" style="height:250px;"><a href="../rating/rating.php"><img class="rounded float-start" src="../img/oren4.png" alt="..." height="200"></a>
+      <span class=""><p class="h1">Avg Rating</p><p class="h3"><?=$rate?></p></span></div>
     </div>
 </div>
 </section>
 
 
-<?php include "../templates/footer.php";?>
+<?php 
+include "../templates/footer.php";
+?>

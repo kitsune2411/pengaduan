@@ -1,8 +1,9 @@
 <?php 
 
 $judul = "detail admin";
-include "../templates/header.php"; 
 require "../core.php"; 
+include "../templates/header.php"; 
+
 
 $id    = $_GET['id'];
 ?>
@@ -53,11 +54,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <th scope="row">No. Handphone</th>
         <td>: <?= $row['telp'];?></td>
     </tr>
-    <tr>
-        <th scope="row">Password</th>
-        <td>: <?= $row['password'];?></td>
-    </tr>
-
 
 <?php } ?>
 </tbody>    
