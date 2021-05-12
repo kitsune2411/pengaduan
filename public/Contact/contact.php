@@ -26,23 +26,23 @@
               
                         <ul class="list-unstyled">
                           <div class="link">
-                            <span>INSTAGRAM</span><br>
+                            <span><i class="fab fa-instagram"></i> INSTAGRAM</span><br>
                             <a href="#!" class="text">@pekoks</a>
                           </div>
                           <div class="link">
-                            <span>FACEBOOK</span><br>
+                            <span><i class="fab fa-facebook-f"></i> FACEBOOK</span><br>
                             <a href="#!" class="text">Pekoksqu</a>
                           </div>
                           <div class="link">
-                            <span>YOUTUBE</span><br>
+                            <span><i class="fab fa-youtube"></i> YOUTUBE</span><br>
                             <a href="#!" class="text">pekok geming</a>
                           </div>
                           <div class="link">
-                            <span>WHATSAPP</span><br>
+                            <span><i class="fab fa-whatsapp"></i> WHATSAPP</span><br>
                             <a href="#!" class="text">Contact Us</a>
                           </div>
                           <div class="link">
-                            <span>ADDRESS</span><br>
+                            <span><i class="fas fa-map-marker-alt"></i> ADDRESS</span><br>
                             <span>JL. indramayu selatan no.18</span>
                           </div>
                         </ul>

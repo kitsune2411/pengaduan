@@ -1,0 +1,30 @@
+.warna-footer {
+
+    background-color: #6A798C;
+}
+
+.pekok{
+    color: #F7882F;
+}
+
+.nav-link a.active{
+    color: #F7882F;
+    border-bottom: #F7882F 6px;
+
+}
+
+.navbar-nav a:hover{
+    color: #F7882F;
+    border-bottom: #F7882F 6px;
+
+}
+
+.jumbotron {
+    padding-top: 200px;
+    background-color: rgba(230, 230, 230, 0.70);
+    
+}
+
+.form-group{
+    margin-bottom: 20px;
+}

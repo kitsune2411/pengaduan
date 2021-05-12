@@ -53,7 +53,7 @@
             <div class="card text-center">
               <img src="orang sementara.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text text-center">I KADEK RADITYA ADHI</p>
+                <p class="card-text text-center">SEPTIANTO ADE PUTRA</p>
                 <p class="card-text text-center">FRONT END</p>
               </div>
             </div>
@@ -62,7 +62,7 @@
             <div class="card text-center">
               <img src="orang sementara.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text text-center">I KADEK RADITYA ADHI</p>
+                <p class="card-text text-center">DIO IQBAL FIRMANSYAH</p>
                 <p class="card-text text-center">FRONT END</p>
               </div>
             </div>
@@ -74,8 +74,8 @@
             <div class="card text-center">
               <img src="orang sementara.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text text-center">I KADEK RADITYA ADHI</p>
-                <p class="card-text text-center">FRONT END</p>
+                <p class="card-text text-center">DEWA PUTU AGUNG KRISTIAWAN</p>
+                <p class="card-text text-center">BACK END</p>
               </div>
             </div>
           </div>
@@ -83,8 +83,8 @@
             <div class="card text-center">
               <img src="orang sementara.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text text-center">I KADEK RADITYA ADHI</p>
-                <p class="card-text text-center">FRONT END</p>
+                <p class="card-text text-center">ISA ROHMADAN</p>
+                <p class="card-text text-center">BACK END</p>
               </div>
             </div>
           </div>
@@ -92,8 +92,8 @@
             <div class="card text-center">
               <img src="orang sementara.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text text-center">I KADEK RADITYA ADHI</p>
-                <p class="card-text text-center">FRONT END</p>
+                <p class="card-text text-center">FARID ADRI SEPTIAN</p>
+                <p class="card-text text-center">BACK END</p>
               </div>
             </div>
           </div>

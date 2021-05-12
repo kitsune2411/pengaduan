@@ -27,7 +27,12 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
   rel="stylesheet"
 />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 <style>
+html{
+  scroll-behavior: smooth;
+}
 /* NAVBAR */
 .nav-link.l:hover{
     border-bottom: 3px solid #F7882F;
@@ -43,13 +48,21 @@
 .dropdown-toggle:hover{
   color:orange!important;
 }
+
+.pekok{
+    color: #F7882F;
+}
+
+.warna-footer{
+  background-color: #6A798C;
+}
   </style>
 
     <title>Pengaduan masyarakat | <?= $judul?></title>
   </head>
   <body>
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#"><h1 class="pekok">PEKOK |</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,8 +86,8 @@
               <img src="user bulet.png" width="35">
               </a> 
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="../Profile/profile.php">Profil</a></li>
+                <li><a class="dropdown-item" href="../Profile/form-edit-profile.php">Setting</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="../../logout.php">Log out</a></li>
               </ul>
@@ -97,4 +110,6 @@ for (var i = 0; i < btns.length; i++) {
   this.className += " active";
   });
 }
+
+
 </script>

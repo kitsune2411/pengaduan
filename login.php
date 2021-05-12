@@ -1,16 +1,19 @@
 
 <div class="card" style="padding: 50px; width: 40%; margin: 0 auto; margin-top: 10%;">
-<h3 style="text-align: center;" class="orange-text">Login!</h3>
+<h3 style="text-align: center;" class="orange-text">Login</h3>
 	<form method="POST">
 		<div class="input_field">
 			<label for="username">Username</label>
 			<input id="username" type="text" name="username" required>
 		</div>
 		<div class="input_field">
-			<label for="password">Passowrd</label>
+			<label for="password">Password</label>
 			<input id="password" type="password" name="password" required>
+			<a href="forgotpassword.php">Forgot Password?</a>
 		</div>
-		<input type="submit" name="login" value="Login" class="btn orange" style="width: 100%;">
+		<input type="submit" name="login" value="Login" class="btn orange mt-3" style="width: 100%;">
+		<hr>
+		<p class="text-center">Belum mempunyai akun? <a href="regis.php">Register</a></p>
 	</form>
 </div>
 <?php 
@@ -29,7 +32,7 @@
 		if($cek>0 && $cek2>0 ){
 			session_start();
 			$_SESSION['username']=$username;
-			header('location:redirect.php');
+			header('location:pilih.html');
 		}
 		elseif($cek>0){
 			session_start();

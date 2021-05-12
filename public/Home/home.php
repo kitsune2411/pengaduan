@@ -10,7 +10,7 @@
                 <div class="row-4">
                   <div class="col-6">
                     <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, soluta possimus esse vitae reiciendis quod ratione error quam dolore aspernatur exercitationem quia fugiat modi unde, cupiditate dolores deleniti, quaerat ea!</p>
-                    <a class="btn btn-lg" href="#" role="button">MULAI</a>
+                    <a class="btn btn-lg" href="../Form pengaduan/form-aduan.php" role="button">MULAI</a>
                 </div>
                 </div>
             </div>      
